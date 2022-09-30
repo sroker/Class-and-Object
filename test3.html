@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #171717;
+            color: antiquewhite;
+            font-family: sans-serif;
+        }
+        .container{
+            text-align: center;
+        }
+        section{
+            max-width: 1000px;
+            text-align: center;
+            background-color: rgb(195, 160, 121);
+            color: rgb(29, 29, 29);
+            margin: 4% auto;
+            border-radius: 5px;
+            border: none;
+            padding: 3px;
+        }
+        #hasil{
+            border: 2px solid #171717;
+            padding: 2px;
+            width: 15%;
+            border-radius: 5px;
+            margin: auto;
+        }
+        section input[type="text"]{
+            border: none;
+            border-radius: 4px;
+            padding: 3px;
+            background-color: rgb(232, 225, 123);
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Punny Web</h1>
+        <section>
+            <h2 id="title"></h2>
+            <input type="text" name="countBar" id="countBar" onkeyup="Hitung()">
+            <p id="data"></p>
+            <p id="hasil">Jumlah Kalimat : 0</p>
+    </section>
+    </div>
+<script>
+    let = kalimat = {
+        "status" : true,
+        "title" : "Westife",
+        "data" : "i have a dream, a song to sing \n to help me cope with anything \n if you see the wonder (wonder) of a fairy tale \n You can take the future even if you fail"
+    }
+    let judul = kalimat.title
+    let teks = kalimat.data
+    
+    title.innerHTML = title.innerHTML + judul
+    data.innerHTML = data.innerHTML + teks
+
+    function Hitung() {
+        let count = document.getElementById("hasil")
+        let count_total = countBar.value.length;
+        count.innerHTML = "Jumlah Kalimat : " + count_total;
+    }
+    
+
+    
+</script>    
+</body>
+</html>
