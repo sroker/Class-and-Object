@@ -70,13 +70,13 @@
 
         let artist_ = kalimat.data.artist;
         let lyrics_ = kalimat.data.songLyrics.replaceAll("\n","<br>");
-        let profile = kalimat.data.myprofile;
+        let profile_ = kalimat.data.myprofile;
 
         if (searching.toLowerCase() == "i have a dream") {
             lyrics.innerHTML = lyrics_;
             count.innerHTML = "Jumlah Karakter :"+ lyrics_.length;
         } else if(searching.toLowerCase() == "my profile"){
-            lyrics.innerHTML = profile;
+            lyrics.innerHTML = profile_;
             count.innerHTML = "Jumlah Karakter :"+ profile.length;
         }else{
             lyrics.innerHTML = "";
