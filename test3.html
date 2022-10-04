@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>pencarian</title>
     <style>
         body{
             background-color: #171717;
@@ -27,9 +27,9 @@
         #hasil{
             border: 2px solid #171717;
             padding: 2px;
-            width: 15%;
+            width: 17%;
             border-radius: 5px;
-            margin: auto;
+            margin: 2% auto;
         }
         section input[type="text"]{
             border: none;
@@ -45,31 +45,44 @@
         <h1>Punny Web</h1>
         <section>
             <h2 id="title"></h2>
-            <input type="text" name="countBar" id="countBar" onkeyup="Hitung()">
+            <input type="text" name="countBarSearch" id="countBarSearch" onkeyup="HitungDanCari()">
             <p id="data"></p>
-            <p id="hasil">Jumlah Kalimat : 0</p>
+            <p id="hasil">Jumlah Karakter : 0</p>
     </section>
     </div>
 <script>
-    let = kalimat = {
+    let kalimat = {
         "status" : true,
-        "title" : "Westife",
-        "data" : "i have a dream, a song to sing \n to help me cope with anything \n if you see the wonder (wonder) of a fairy tale \n You can take the future even if you fail"
+        "data" : {
+            "artist" : "Westife",
+            "songTitle" : "I have a dream",
+            "songLyrics" : "I have a dream a song to sing<br>To help me cope with anything<br>If you see the wonder (wonder) of a fairy tale<br>You can take the future even if you fail",
+            "myprofile" : "Yusra Budiman Hasibuan / 211110993 IF C Class and Object"
+        }
     }
-    let judul = kalimat.title
-    let teks = kalimat.data
-    
-    title.innerHTML = title.innerHTML + judul
-    data.innerHTML = data.innerHTML + teks
+    let artist = kalimat.data.artist;
+    title.innerHTML = artist;
 
-    function Hitung() {
-        let count = document.getElementById("hasil")
-        let count_total = countBar.value.length;
-        count.innerHTML = "Jumlah Kalimat : " + count_total;
+    function HitungDanCari() {
+        let lyrics = document.getElementById("data");
+        let count = document.getElementById("hasil");
+        let searching = document.getElementById("countBarSearch").value;
+
+        let artist_ = kalimat.data.artist;
+        let lyrics_ = kalimat.data.songLyrics.replaceAll("\n","<br>");
+        let profile = kalimat.data.myprofile;
+
+        if (searching.toLowerCase() == "i have a dream") {
+            lyrics.innerHTML = lyrics_;
+            count.innerHTML = "Jumlah Karakter :"+ lyrics_.length;
+        } else if(searching.toLowerCase() == "my profile"){
+            lyrics.innerHTML = profile;
+            count.innerHTML = "Jumlah Karakter :"+ profile.length;
+        }else{
+            lyrics.innerHTML = "";
+            count.innerHTML = "Jumlah Karakter :" + searching.length;
+        }
     }
-    
-
-    
 </script>    
 </body>
 </html>
