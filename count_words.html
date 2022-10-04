@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hitung kata</title>
+    <style>
+        body{
+            background-color: #171717;
+            color: antiquewhite;
+            font-family: sans-serif;
+        }
+        .container{
+            text-align: center;
+        }
+        section{
+            max-width: 1000px;
+            text-align: center;
+            background-color: rgb(195, 160, 121);
+            color: rgb(29, 29, 29);
+            margin: 4% auto;
+            border-radius: 5px;
+            border: none;
+            padding: 3px;
+        }
+        #hasil{
+            border: 2px solid #171717;
+            padding: 2px;
+            width: 15%;
+            border-radius: 5px;
+            margin: 2% auto;
+        }
+        section #countBar{
+            border: none;
+            border-radius: 4px;
+            width: 15%;
+            margin: auto;
+            padding: 3px;
+            background-color: rgb(232, 225, 123);
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Punny Web</h1>
+        <section>
+            <h2 id="title"></h2>
+            <p id="countBar" onkeyup="Hitung()"></p>
+            <p id="data">&nbsp;</p>
+            <p id="hasil"></p>
+    </section>
+    </div>
+<script>
+    let kalimat = {
+        status : true,
+       "data" : {
+            "artist" : "Westife",
+            "songTitle" : "I have a dream",
+            "songLyrics" : "I have a dream, a song to sing \n To help me cope with anything\nIf you see the wonder (wonder) of a fairy tale \nYou can take the future even if you fail"
+        }
+        
+    }
+    let artist_ = kalimat.data.artist;
+    title.innerHTML = artist_;
+    let songtitle_ = kalimat.data.songTitle;
+    countBar.innerHTML = songtitle_;
+    let lyrics_ = kalimat.data.songLyrics.replaceAll("\n", "<br>");
+    let count_text = lyrics_.split(" ").length;
+    data.innerHTML = lyrics_;
+    hasil.innerHTML = "Jumlah kata : "+ count_text;
+</script>    
+</body>
+</html>
